@@ -7,6 +7,6 @@ RUN echo "LC_ALL=en_US.UTF-8" > /etc/default/locale && \
     echo "LANG=en_US.UTF-8" >> /etc/default/locale
 
 # Add executable
-ADD dist/terraformpy.pex /bin/terraformpy
+ADD dist/tfpy.pex /bin/tfpy
 
-ENTRYPOINT [ "/bin/terraformpy" ]
+ENTRYPOINT [ "/bin/tfpy" ]
