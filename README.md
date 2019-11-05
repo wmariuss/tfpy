@@ -1,4 +1,4 @@
-# tfenv (terraformpy)
+# tfpy (terraformpy)
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/wmariuss/tfpy)](https://github.com/wmariuss/tfpy/releases)
 [![Tag](https://img.shields.io/github/v/tag/wmariuss/tfpy)](https://github.com/wmariuss/tfpy/tags)
