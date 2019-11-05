@@ -16,7 +16,7 @@ This was created to have a workaround for `Gitea`, `Jenkins` and use `Terraform 
 
 ## Install
 
-For easy deployment this is built as executable. You can download it from [release](https://github.com/wmariuss/tfenv/releases) section.
+For easy deployment this is built as executable. You can download it from [release](https://github.com/wmariuss/tfpy/releases) section.
 
 ### Build executable
 
