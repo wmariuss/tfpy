@@ -16,7 +16,7 @@ This was created to have a workaround for `Gitea`, `Jenkins` and use `Terraform 
 
 ## Install
 
-For production systems we use binary file. Ask or build the binary.
+For easy deployment this is built as executable. You can download it from [release](https://github.com/wmariuss/tfenv/releases) section.
 
 ### Build executable
 
