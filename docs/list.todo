@@ -1,0 +1,4 @@
+General:
+    ▪ Refactor for better performance
+    ▪ Store path(s) with changes in a local database
+    ▪ Support for vars file

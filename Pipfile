@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+invoke = "*"
+wheel = "==0.30.0"
+pex = "==1.6.5"
+setuptools = "*"
+tox = "*"
+mypy = "*"
+terraformpy = {editable = true,path = "."}
+
+[packages]
+subprocrunner = "==0.15.6"
+click = "==7.0"
+termcolor = "==1.1.0"
+
+[requires]
+python_version = "3.6"
