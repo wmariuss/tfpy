@@ -7,7 +7,7 @@
 
 Check and apply changes (only if changes exists) in all dir(s) in the current path. This can be used for CI/CD.
 
-This was created to have a workaround for `Gitea`, `Jenkins` and use `Terraform as a Team`. If you want something better I highly recommend to use [Atlantis](https://www.runatlantis.io/) instead.
+This was created to have a workaround for `Gitea`, `Jenkins` and use `Terraform as a Team` model. If you want something better I highly recommend to use [Atlantis](https://www.runatlantis.io/) instead.
 
 ## Requirements
 
