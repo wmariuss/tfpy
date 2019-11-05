@@ -1,8 +1,11 @@
 # tfenv (terraformpy)
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/wmariuss/tfpy)](https://github.com/wmariuss/tfpy/releases)
+[![Tag](https://img.shields.io/github/v/tag/wmariuss/tfpy)](https://github.com/wmariuss/tfpy/tags)
+[![License](https://img.shields.io/github/license/wmariuss/tfpy)](https://github.com/wmariuss/tfpy/blob/master/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Check and apply changes (only if changes exists) in all subdir(s) in the current path. This can be used for CI/CD.
+Check and apply changes (only if changes exists) in all dir(s) in the current path. This can be used for CI/CD.
 
 This was created to have a workaround for `Gitea`, `Jenkins` and use `Terraform as a Team`. If you want something better I highly recommend to use [Atlantis](https://www.runatlantis.io/) instead.
 
