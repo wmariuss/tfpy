@@ -1,0 +1,64 @@
+pipeline {
+    agent { node { label 'test' } }
+    stages {
+        stage('Checkout') {
+            steps {
+ 	            checkout([$class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: '<Git_credential_ID>', url: '<Git_Repo_URL>']]
+                ])
+            }
+        }
+        stage('Setup environment') {
+            steps {
+                echo "Setup environment..."
+                withCredentials([file(credentialsId: '<AWS_Shared_credential_file>', variable: 'credentials')]) {
+                    sh 'mkdir -p /root/.aws'
+                    sh 'cp ${credentials} /root/.aws/'
+                    sh 'chmod -R 600 /root/.aws'
+                }
+                withCredentials([file(credentialsId: '<AWS_key_pairs>', variable: 'credentials')]) {
+                    sh 'mkdir -p /root/.ssh'
+                    sh 'cp ${credentials} /root/.ssh/'
+                    sh 'chmod -R 600 /root/.ssh'
+                }
+               sh 'tfenv install 0.11.14'
+               sh 'tfpy --version'
+            }
+        }
+         stage('Init') {
+            steps {
+                sh 'tfpy init'
+            }
+        }
+        stage('Show') {
+            steps {
+                sh 'tfpy show'
+            }
+        }
+        stage('Approval') {
+            steps {
+                timeout(time: 300, unit: 'SECONDS'){
+                    script {
+                        def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
+                    }
+                }
+            }
+        }
+        stage('Apply') {
+            steps {
+                sh 'tfpy apply'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Clean up...'
+            sh 'rm -rf /root/.aws'
+            sh 'rm -rf /root/.ssh'
+        }
+    }
+}
