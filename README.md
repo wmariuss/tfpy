@@ -27,7 +27,7 @@ For easy deployment this is built as executable. You can download it from [relea
 
 * `tfpy --help` for active parameters and options
 
-Integration with CI/CD systems:
+### Integration with CI/CD systems:
 
 * [Jenkinsfile](docs/Jenkinsfile)
 
