@@ -1,5 +1,6 @@
 tasks.py
 env.sh
 .vscode
+.idea
 .git
 README.md
